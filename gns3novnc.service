@@ -1,0 +1,22 @@
+[Unit]
+Description=Monitoramento de sessões VNC + noVNC + atualização HTML
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/gns3novnc.sh
+Restart=always
+RestartSec=5
+
+# Ambiente opcional (caso precise)
+Environment=DISPLAY=:0
+
+# Garante que o script tenha acesso ao PATH correto
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Onde os logs vão aparecer
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
