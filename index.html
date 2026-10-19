@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consoles noVNC - GNS3</title>
+    <style>
+        body {
+            background: #1e1e1e;
+            color: #e0e0e0;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #272727;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #444;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #00c8ff;
+        }
+        main {
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #2c2c2c;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            transition: 0.2s;
+            border-left: 5px solid #00c8ff;
+        }
+        li:hover {
+            background: #3a3a3a;
+            transform: scale(1.02);
+        }
+        a {
+            color: #00c8ff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Consoles Disponíveis</h1>
+    </header>
+    <main>
+     <iframe src="console_list.html"
+            class="frame-pequeno"
+            id="meu-iframe"
+            onload="this.style.height = this.contentWindow.document.documentElement.scrollHeight + 'px';"
+            style="width: 100%; border: none; scrollbar-width: none;">
+     </iframe>
+    </main>
+    <footer>
+        Atualizado automaticamente a cada 5 segundos
+    </footer>
+</body>
+<style>
+    .frame-pequeno {
+        width: 250px;              /* tamanho do frame */
+        padding: 15px;             /* espaço interno */
+        border: 2px solid #333;    /* borda */
+        border-radius: 8px;        /* cantos arredondados */
+        background: #f9f9f9;       /* fundo */
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* leve sombra */
+        margin: 20px auto;         /* centraliza */
+    }
+
+    .frame-pequeno ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .frame-pequeno a {
+        text-decoration: none;
+        color: #0077cc;
+        font-weight: bold;
+    }
+</style>
+
+</html>
