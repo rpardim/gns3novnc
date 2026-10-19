@@ -143,8 +143,8 @@ administrator@ubuntu-server:~$ cat /var/www/html/noVNC/vnc_lite.html
 
         // Use same logic as vnc.html, but to keep lite, without hash fragment,
         // encrypt flag, .etc
-        const host = readQueryVariable('host', '');
-        const port = readQueryVariable('port', 0);
+        const host = readQueryVariable('host',  window.location.hostname);
+        const port = readQueryVariable('port', window.location.port);
         const password = readQueryVariable('password');
         const path = readQueryVariable('path', 'websockify');
 
