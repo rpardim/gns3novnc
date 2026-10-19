@@ -142,7 +142,7 @@
 
         // Use same logic as vnc.html, but to keep lite, without hash fragment,
         // encrypt flag, .etc
-        const host = readQueryVariable('host',  window.location.hostname);
+        const host = readQueryVariable('host', window.location.hostname);
         const port = readQueryVariable('port', window.location.port);
         const password = readQueryVariable('password');
         const path = readQueryVariable('path', 'websockify');
@@ -170,11 +170,7 @@
         } else {
             url = new URL(path, location.href);
             url.protocol = protocol;
-							
-				  
-							  
         }
-						  
 
         // Creating a new RFB object will start a new connection
         rfb = new RFB(document.getElementById('screen'), url.href,
