@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Consoles noVNC - GNS3</title>
     <meta http-equiv="refresh" content="5">
-
     <style>
         body {
             background: #1e1e1e;
@@ -62,10 +61,6 @@
 </head>
 
 <body>
-    <header>
-        <h1>Consoles Disponíveis</h1>
-    </header>
-
     <main>
         <div class="frame-pequeno">
         <!-- LISTA DINÂMICA GERADA PELO SCRIPT -->
@@ -75,9 +70,6 @@
         </div>
         <!-- FIM DA LISTA DINÂMICA -->
     </main>
-    <footer>
-        Atualizado automaticamente a cada 5 segundos
-    </footer>
 </body>
 <style>
     .frame-pequeno {
