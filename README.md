@@ -11,6 +11,7 @@ sudo mv vnc_lite.html vnc_lite.html_ori
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/vnc_lite.html
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/console_list.html.template
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/gns3novnc.sh
+cd /usr/local/bin/
 sudo chmod 755 gns3novnc.sh
 cd /etc/systemd/system
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/gns3novnc.service
