@@ -35,5 +35,9 @@ sudo service gns3novnc status
 
 ### Screenshots
 Abrir http://gns3server/noVNC/
-<img width="903" height="363" alt="image" src="https://github.com/user-attachments/assets/28a4790f-064a-44b2-b302-399b6c9f5319" />&nbsp;
-<img width="651" height="226" alt="image" src="https://github.com/user-attachments/assets/d5e9c994-d9bb-49bc-8ad4-676f44c706c5" />
+<img width="1179" height="544" alt="image" src="https://github.com/user-attachments/assets/9762c300-cdb8-4c95-bc54-30ef86e475c1" />
+<img width="1101" height="264" alt="image" src="https://github.com/user-attachments/assets/17cd45bb-ef95-45a7-ac99-64f4a0f864a4" />
+
+
+
+
