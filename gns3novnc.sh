@@ -43,7 +43,7 @@ while true; do
         PIDFILE="/tmp/novnc_${PORTA}.pid"
 
         # Monta URL para a página HTML
-        URL="${BASE_URL}${WEB_PORT}&scale=true"
+        URL="${BASE_URL}${VNC_PORT}&scale=true"
         URLS="${URLS}<li><a href=\"${URL}\" target=\"_blank\">Console ${NAME} - ${VNC_PORT} </a></li>\n"
 
         # Atualiza o HTML com todas as URLs encontradas
