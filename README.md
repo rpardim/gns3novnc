@@ -18,6 +18,7 @@ sudo mv vnc_lite.html vnc_lite.html_ori
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/vnc_lite.html
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/console_list.html.template
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/index.html
+sudo mkdir /var/www/html/noVNC/websockify
 cd /usr/local/bin/
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/gns3novnc.sh
 sudo chmod 755 gns3novnc.sh
