@@ -1,15 +1,17 @@
 #!/bin/bash
 INTERVALO=5
 PROTOHOST="${window.location.protocol}//${window.location.host}"
-NOVNC_BIN="/var/www/html/noVNC/utils/novnc_proxy"
+TOKENS_FILE="/var/www/html/noVNC/utils/websockify/tokens.conf"
+NOVNC_BIN="/var/www/html/noVNC/utils/websockify/run --log-file /var/log/websockify.log --verbose --token-plugin TokenFile --token-source"
 TEMPLATE="/var/www/html/noVNC/console_list.html.template"
 HTML="/var/www/html/noVNC/console_list.html"
-BASE_URL="$PROTOHOST/noVNC/vnc_lite.html?port="
+BASE_URL="$PROTOHOST/noVNC/vnc_lite.html?path=websockify?token="
 echo "Monitorando múltiplas sessões VNC e atualizando console_list.html..."
 echo
 
 while true; do
     PROCESSOS=$(ps aux | grep "vnc 0.0.0.0:" | grep -v grep)
+    > "$TOKENS_FILE"
 
     # Limpa lista temporária de URLs
     URLS=""
@@ -36,12 +38,13 @@ while true; do
 
         LISTEN_PORT="580${PORTA}"
         VNC_PORT="590${PORTA}"
+        echo "${VNC_PORT}: 127.0.0.1:${VNC_PORT}" >> "$TOKENS_FILE"
         WEB_PORT="580${PORTA}"
         PIDFILE="/tmp/novnc_${PORTA}.pid"
 
         # Monta URL para a página HTML
         URL="${BASE_URL}${WEB_PORT}&scale=true"
-        URLS="${URLS}<li><a href=\"${URL}\" target=\"_blank\">Console ${NAME} - ${WEB_PORT} </a></li>\n"
+        URLS="${URLS}<li><a href=\"${URL}\" target=\"_blank\">Console ${NAME} - ${VNC_PORT} </a></li>\n"
 
         # Atualiza o HTML com todas as URLs encontradas
         cp "$TEMPLATE" "$HTML"
@@ -66,7 +69,7 @@ while true; do
         # Inicia nova instância do noVNC
         echo "[INICIANDO] noVNC para porta $PORTA → listen $LISTEN_PORT → vnc localhost:$VNC_PORT"
 
-        $NOVNC_BIN --listen "$LISTEN_PORT" --vnc "localhost:$VNC_PORT" &
+        $NOVNC_BIN $TOKENS_FILE 6080 &
         NOVNC_PID=$!
 
         echo "$NOVNC_PID" > "$PIDFILE"
