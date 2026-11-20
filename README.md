@@ -4,6 +4,13 @@ Monitoramento de sessões VNC + noVNC + atualização HTML
 ## Procedimento:
 ```
 sudo apt install apache2
+sudo a2enmod proxy proxy_http proxy_wstunnel rewrite
+cd /etc/apache2/sites-available/
+sudo mv 000-default.conf 000-default.conf_ori
+sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/websockfy.conf
+sudo mv websockfy.conf 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl reload apache2
 cd /var/www/html
 sudo git clone https://github.com/novnc/noVNC
 cd noVNC
