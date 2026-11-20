@@ -18,6 +18,8 @@ sudo mv vnc_lite.html vnc_lite.html_ori
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/vnc_lite.html
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/console_list.html.template
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/index.html
+sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/favicon.ico
+sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/favicon.svg
 sudo mkdir /var/www/html/noVNC/utils/websockify
 sudo touch /var/www/html/noVNC/utils/websockify/tokens.conf
 cd /usr/local/bin/
