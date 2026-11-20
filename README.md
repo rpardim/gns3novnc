@@ -20,7 +20,7 @@ sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/console_list.
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/index.html
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/favicon.ico
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/favicon.svg
-sudo mkdir /var/www/html/noVNC/utils/websockify
+sudo git clone https://github.com/novnc/websockify
 sudo touch /var/www/html/noVNC/utils/websockify/tokens.conf
 cd /usr/local/bin/
 sudo wget https://raw.githubusercontent.com/rpardim/gns3novnc/main/gns3novnc.sh
