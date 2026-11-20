@@ -67,7 +67,7 @@ while true; do
         fi
 
         # Inicia nova instância do noVNC
-        echo "[INICIANDO] noVNC para porta $PORTA → listen $LISTEN_PORT → vnc localhost:$VNC_PORT"
+        echo "[INICIANDO] noVNC para porta $PORTA → $VNC_PORT"
 
         $NOVNC_BIN $TOKENS_FILE 6080 &
         NOVNC_PID=$!
